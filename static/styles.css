@@ -1,0 +1,180 @@
+body {
+    margin: 1em;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1DB954;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* .container {
+    width: 95%; 
+    max-width: 95%; 
+    margin: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+} */
+
+.container {
+    width: 95%;
+    max-width: 95%; 
+    margin:  auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+label, textarea, input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 1em auto;
+    border-radius: 10px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+button {
+    background-color: #1DB954;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: solid;
+    border-color: #1DB954;
+}
+
+button:hover {
+    color: #1DB954;
+    background-color: #fff;
+}
+
+.songs-list {
+    margin: 20px 0;
+}
+
+.song {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.album-art {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+.song-details {
+    flex: 1;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    padding: 3px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} */
+
+.song-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.song-artist {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.song-features {
+    font-size: 0.9em;
+    background: #eee;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%; /* Table takes the full width of its container */
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 4px; /* Reduced padding to make rows narrower */
+    font-size: 0.8em; /* Smaller font size to decrease cell content size */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.album-art {
+    width: 50px; /* Adjust if needed */
+    height: auto;
+    border-radius: 5px;
+}
+

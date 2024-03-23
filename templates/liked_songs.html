@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liked Songs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Liked Songs</h1>
+        <button id="start-analysis-btn">Start Analysis</button>
+        <div class="table-container">
+            <table id="songsTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Release Date</th>
+                        <th>Popularity</th>
+                        <th>Duration</th>
+                        <th>Danceability</th>
+                        <th>Energy</th>
+                        <th>Key</th>
+                        <th>Loudness</th>
+                        <th>Mode</th>
+                        <th>Speechiness</th>
+                        <th>Acousticness</th>
+                        <th>Instrumentalness</th>
+                        <th>Liveness</th>
+                        <th>Valence</th>
+                        <th>Tempo</th>
+                        <th>Time Signature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Define the table variable in the same scope as the event listener
+            var table = $('#songsTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "{{ url_for('liked_songs_data') }}",
+                "pageLength": 50
+            });
+
+            // Attach the event listener to the table
+            table.on('order.dt', function (e, settings, order) {
+                console.log('Sorting event triggered');
+                console.log('Order:', order);
+            });
+        });
+
+        $('#start-analysis-btn').click(function() {
+            $.ajax({
+                url: "{{ url_for('analysis') }}",
+                type: "GET",
+                success: function(response) {
+                    // Handle the response
+                    // For example, redirect to the analysis results page
+                    window.location.href = "{{ url_for('analysis') }}";
+                },
+                error: function(xhr, status, error) {
+                    // Handle any errors
+                    console.error("Error during analysis:", error);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

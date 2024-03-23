@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Analysis Results</h2>
+
+        {% for feature, plot_path in feature_plots.items() %}
+            <h3>{{ feature.replace('_', ' ').capitalize() }} Distribution</h3>
+            <img src="{{ url_for('static', filename=plot_path[7:]) }}" alt="{{ feature.capitalize() }} Distribution">
+        {% endfor %}
+    </div>
+</body>
+</html>
